@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div class="containter mt-4">
+      
+      
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="registerLabel">Вы не зарегистрированы</h5>
+                    </div>
+                    <div class="modal-body">
+                      <?php if($errors):?>
+                        <?php foreach($errors as $error): ?>
+                        <div class="alert alert-danger" role="alert"><?=htmlspecialchars($error)?></div>
+                        <?php endforeach; ?>
+                      <?php endif;?>
+                      <form action="<?=htmlspecialchars($config['domen'])?>" method="POST">
+                      <div class="form-group">
+                        <input type="text" name="first_name" placeholder="Имя" value="<?=$student->first_name?>" class="form-control">
+                        <input type="text" name="last_name" placeholder="Фамилия" value="<?=$student->last_name?>" class="form-control mt-3">
+                        <input type="text" name="group_id" placeholder="Номер группы" value="<?=$student->group_id?>" class="form-control mt-3">
+                        <input type="text" name="rating" placeholder="Балл" value="<?=$student->rating?>" class="form-control mt-3">
+                        <input type="text" name="email" placeholder="Email" value="<?=$student->email?>" class="form-control mt-3">
+                        <label for="inputDate" class="mt-2">Введите дату рождения:</label>
+                        <input type="date" name="birthday" value="<?=$student->birthday?>" class="form-control mt-1">
+                        <select name="sex" value="<?=$student->sex?>" class="form-control mt-3">
+                          <option>Мужчина</option>
+                          <option>Женщина</option>
+                        </select>
+                        <select name="local" value="<?=$student->local?>" class="form-control mt-3">
+                          <option>Местный</option>
+                          <option>Иногородний</option>
+                        </select>
+
+                       
+
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="submit" name="register" class="btn btn-primary">Зарегистрироваться</button>
+                    </div>
+                    </form>
+                  </div>
+                </div>
+              
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  </body>
+</html>
